@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2113.65">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="es"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;Panel de Gráficos: Pobreza en México&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script type="text/javascript"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>google.charts.load('current', {packages: ['corechart', 'bar']});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>google.charts.setOnLoadCallback(drawCharts);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function drawCharts() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>drawChart1();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>drawChart2();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>drawChart3();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>drawChart4();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>drawChart5();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function drawChart1() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>var data = google.visualization.arrayToDataTable([</p>
+<p class="p1"><span class="Apple-converted-space">        </span>['Año', 'Pobreza (%)'],</p>
+<p class="p1"><span class="Apple-converted-space">        </span>['2008', 44.4], ['2010', 46.1], ['2012', 45.5],</p>
+<p class="p1"><span class="Apple-converted-space">        </span>['2014', 46.2], ['2016', 43.6], ['2018', 41.9]</p>
+<p class="p1"><span class="Apple-converted-space">      </span>]);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>var options = { title: 'Evolución de la pobreza en México', curveType: 'function', legend: { position: 'bottom' } };</p>
+<p class="p1"><span class="Apple-converted-space">      </span>new google.visualization.LineChart(document.getElementById('chart1')).draw(data, options);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function drawChart2() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>var data = google.visualization.arrayToDataTable([</p>
+<p class="p1"><span class="Apple-converted-space">        </span>['Año', 'Pobreza Extrema (%)'],</p>
+<p class="p1"><span class="Apple-converted-space">        </span>['2008', 11.0], ['2010', 11.3], ['2012', 9.8],</p>
+<p class="p1"><span class="Apple-converted-space">        </span>['2014', 9.5], ['2016', 7.9], ['2018', 7.4]</p>
+<p class="p1"><span class="Apple-converted-space">      </span>]);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>var options = { title: 'Pobreza extrema en México', isStacked: true, areaOpacity: 0.4, legend: { position: 'bottom' } };</p>
+<p class="p1"><span class="Apple-converted-space">      </span>new google.visualization.AreaChart(document.getElementById('chart2')).draw(data, options);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function drawChart3() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>var data = google.visualization.arrayToDataTable([</p>
+<p class="p1"><span class="Apple-converted-space">        </span>['Estado', 'Pobreza (%)'],</p>
+<p class="p1"><span class="Apple-converted-space">        </span>['Chiapas', 76.4], ['Guerrero', 66.5], ['Oaxaca', 66.4],</p>
+<p class="p1"><span class="Apple-converted-space">        </span>['Veracruz', 61.8], ['Puebla', 58.9]</p>
+<p class="p1"><span class="Apple-converted-space">      </span>]);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>var options = { title: 'Pobreza por entidad federativa (2018)', legend: { position: 'none' }, bars: 'horizontal' };</p>
+<p class="p1"><span class="Apple-converted-space">      </span>new google.visualization.BarChart(document.getElementById('chart3')).draw(data, options);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function drawChart4() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>var data = google.visualization.arrayToDataTable([</p>
+<p class="p1"><span class="Apple-converted-space">        </span>['Grupo de edad', 'Rezago educativo (%)'],</p>
+<p class="p1"><span class="Apple-converted-space">        </span>['15–24 años', 20.0], ['25–34 años', 28.3],</p>
+<p class="p1"><span class="Apple-converted-space">        </span>['35–44 años', 32.5], ['45–54 años', 38.1]</p>
+<p class="p1"><span class="Apple-converted-space">      </span>]);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>var options = { title: 'Rezago educativo por grupo de edad (2018)', legend: { position: 'none' } };</p>
+<p class="p1"><span class="Apple-converted-space">      </span>new google.visualization.ColumnChart(document.getElementById('chart4')).draw(data, options);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function drawChart5() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>var data = google.visualization.arrayToDataTable([</p>
+<p class="p1"><span class="Apple-converted-space">        </span>['Carencia social', 'Porcentaje afectado'],</p>
+<p class="p1"><span class="Apple-converted-space">        </span>['Salud', 16.2], ['Seguridad social', 57.3],</p>
+<p class="p1"><span class="Apple-converted-space">        </span>['Servicios básicos', 19.8], ['Alimentación', 20.4]</p>
+<p class="p1"><span class="Apple-converted-space">      </span>]);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>var options = { title: 'Carencias sociales en México (2018)' };</p>
+<p class="p1"><span class="Apple-converted-space">      </span>new google.visualization.PieChart(document.getElementById('chart5')).draw(data, options);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;h2&gt;Panel de Gráficos: Análisis de Pobreza en México&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="chart1" style="width: 800px; height: 400px;"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="chart2" style="width: 800px; height: 400px;"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="chart3" style="width: 800px; height: 400px;"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="chart4" style="width: 800px; height: 400px;"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="chart5" style="width: 800px; height: 400px;"&gt;&lt;/div&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
