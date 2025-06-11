@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel de Gráficos: Pobreza en México</title>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {packages: ['corechart', 'bar']});
+    google.charts.setOnLoadCallback(drawCharts);
+
+    function drawCharts() {
+      drawChart1();
+      drawChart2();
+      drawChart3();
+      drawChart4();
+      drawChart5();
+    }
+
+    function drawChart1() {
+      var data = google.visualization.arrayToDataTable([
+        ['Año', 'Pobreza (%)'],
+        ['2008', 44.4], ['2010', 46.1], ['2012', 45.5],
+        ['2014', 46.2], ['2016', 43.6], ['2018', 41.9]
+      ]);
+      var options = { title: 'Evolución de la pobreza en México', curveType: 'function', legend: { position: 'bottom' } };
+      new google.visualization.LineChart(document.getElementById('chart1')).draw(data, options);
+    }
+
+    function drawChart2() {
+      var data = google.visualization.arrayToDataTable([
+        ['Año', 'Pobreza Extrema (%)'],
+        ['2008', 11.0], ['2010', 11.3], ['2012', 9.8],
+        ['2014', 9.5], ['2016', 7.9], ['2018', 7.4]
+      ]);
+      var options = { title: 'Pobreza extrema en México', isStacked: true, areaOpacity: 0.4, legend: { position: 'bottom' } };
+      new google.visualization.AreaChart(document.getElementById('chart2')).draw(data, options);
+    }
+
+    function drawChart3() {
+      var data = google.visualization.arrayToDataTable([
+        ['Estado', 'Pobreza (%)'],
+        ['Chiapas', 76.4], ['Guerrero', 66.5], ['Oaxaca', 66.4],
+        ['Veracruz', 61.8], ['Puebla', 58.9]
+      ]);
+      var options = { title: 'Pobreza por entidad federativa (2018)', legend: { position: 'none' }, bars: 'horizontal' };
+      new google.visualization.BarChart(document.getElementById('chart3')).draw(data, options);
+    }
+
+    function drawChart4() {
+      var data = google.visualization.arrayToDataTable([
+        ['Grupo de edad', 'Rezago educativo (%)'],
+        ['15–24 años', 20.0], ['25–34 años', 28.3],
+        ['35–44 años', 32.5], ['45–54 años', 38.1]
+      ]);
+      var options = { title: 'Rezago educativo por grupo de edad (2018)', legend: { position: 'none' } };
+      new google.visualization.ColumnChart(document.getElementById('chart4')).draw(data, options);
+    }
+
+    function drawChart5() {
+      var data = google.visualization.arrayToDataTable([
+        ['Carencia social', 'Porcentaje afectado'],
+        ['Salud', 16.2], ['Seguridad social', 57.3],
+        ['Servicios básicos', 19.8], ['Alimentación', 20.4]
+      ]);
+      var options = { title: 'Carencias sociales en México (2018)' };
+      new google.visualization.PieChart(document.getElementById('chart5')).draw(data, options);
+    }
+  </script>
+</head>
+<body>
+  <h2>Panel de Gráficos: Análisis de Pobreza en México</h2>
+  <div id="chart1" style="width: 800px; height: 400px;"></div>
+  <div id="chart2" style="width: 800px; height: 400px;"></div>
+  <div id="chart3" style="width: 800px; height: 400px;"></div>
+  <div id="chart4" style="width: 800px; height: 400px;"></div>
+  <div id="chart5" style="width: 800px; height: 400px;"></div>
+</body>
+</html>
